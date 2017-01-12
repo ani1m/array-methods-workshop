@@ -15,3 +15,18 @@ function printPositives(arr) {
 
 var arrayyyy = [1, 2, -3, 4, 5, 0];
 printPositives(arrayyyy);
+
+/* 2
+Re-do exercise 1 by first filtering the input array, 
+and then printing the numbers from the filtered array. 
+Your code will look something like: return arr.filter(...).forEach(...).
+*/
+function printPositives(arr) {
+   return arr.filter(function(value) {
+         return value > 0;
+   }).forEach(function(x) {
+       console.log(x);
+   })
+}
+var arrayyyy = [1, 2, -3, 4, 5, 0];
+printPositives(arrayyyy);
