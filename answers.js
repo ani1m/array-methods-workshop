@@ -30,3 +30,20 @@ function printPositives(arr) {
 }
 var arrayyyy = [1, 2, -3, 4, 5, 0];
 printPositives(arrayyyy);
+
+/* 3
+Write a function called filterArray that takes a callback function and 
+an array as arguments. Your filterArray function should return a new array 
+that contains only the elements where the callback function returns true.
+*/
+function cb(arr) {
+    return true;
+}
+function filterArray(cb,arr) {
+    return arr.filter(cb);
+    
+}
+
+
+console.log(["", 4, true, false, "fun", 1].filter(cb));
+
