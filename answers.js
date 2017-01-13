@@ -144,3 +144,31 @@ function countChars(str) {
 
 console.log(countChars(saying))
 
+/* 8
+In this exercise, your goal is to create a negate function. negate 
+takes one parameter: another function. negate should return a function 
+that, when called, will return the opposite of what the input function 
+would return on the same input.
+*/
+
+function negate(fn) {
+    return function() {
+      return !fn();
+    } 
+}
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+function isEmpty(someList) {
+  return someList.length === 0;
+}
+
+
+var isOdd = negate(isEven);
+console.log(isOdd(11));
+
+var isNotEmpty = negate(isEmpty) 
+console.log(isEmpty("someList"));
+
