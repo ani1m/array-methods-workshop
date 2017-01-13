@@ -64,3 +64,25 @@ function longestWord(str) {
     }, "")
 }
 console.log(longestWord(longString));
+
+/* 5
+Write a function called countVowels that takes a string and returns 
+the number of vowels in the string. You should use Array.prototype.reduce 
+to do your work.
+*/
+
+var phrase = "The quick brown fox";
+var phrase2 = "I'm having trouble with indexOf in this context"
+
+function countVowels(str) {
+    return str.split("").reduce(function(vowCount, current){
+        if(current.match(/[aeiou]/gi)) {
+            vowCount++;
+        }
+        return vowCount;
+    }, 0)
+}
+console.log(countVowels(phrase));
+console.log(countVowels(phrase2));
+
+
