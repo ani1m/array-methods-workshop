@@ -172,3 +172,20 @@ console.log(isOdd(11));
 var isNotEmpty = negate(isEmpty) 
 console.log(isEmpty("someList"));
 
+/* 9 Challenge
+Provide a more complete version of the negate function that will work with any 
+number of parameters. For example, it should work with the following:
+*/
+
+function negate(fn) {
+    return function() {
+        return !fn(fn.arguments);
+    }   
+    }
+
+function firstDividesSecond(first, second) {
+  return second % first === 0;
+}
+
+var firstDoesNotDivideSecond = negate(firstDividesSecond);
+console.log(firstDoesNotDivideSecond(3,4));
