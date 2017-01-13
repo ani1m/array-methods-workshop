@@ -116,5 +116,31 @@ function highLow(arr) {
 }
 console.log(highLow(numbers));
 
+/* 7
+Write a function called countChars that takes a string, and returns an object 
+where the keys are letters, and the value is the number of times that letter 
+appears.
+*/
 
+var saying = "Phrase to count number of characters in my string";
+
+function countChars(str) {
+    var letter = {};
+
+    str.split("").filter(function(countLetter) {
+           return countLetter !== ' ';
+    })
+    .forEach(function(countLetter){
+        if(letter[countLetter]) {
+            letter[countLetter] = letter[countLetter] + 1;
+        }
+        else {
+            letter[countLetter] = 1;
+        }
+      
+    });
+    return letter;
+}
+
+console.log(countChars(saying))
 
