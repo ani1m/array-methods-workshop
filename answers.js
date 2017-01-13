@@ -44,6 +44,23 @@ function filterArray(cb,arr) {
     
 }
 
-
 console.log(["", 4, true, false, "fun", 1].filter(cb));
 
+/* 4
+Write a function called longestWord that takes a string as argument, 
+and returns the longest word in the string. You should use 
+Array.prototype.reduce to do your work.
+*/
+
+var longString = "Write a function called longestWord";
+
+function longestWord(str) {
+    return str.split(" ").reduce(function(accu, element){
+        if(accu.length > element.length) {
+            return accu;
+        } else {
+            return element;
+        }
+    }, "")
+}
+console.log(longestWord(longString));
