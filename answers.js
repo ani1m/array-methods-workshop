@@ -189,3 +189,129 @@ function firstDividesSecond(first, second) {
 
 var firstDoesNotDivideSecond = negate(firstDividesSecond);
 console.log(firstDoesNotDivideSecond(3,4));
+
+/* Find by ID
+Write a function called peopleById that takes an array of people and returns 
+an object where each person is keyed by their unique ID.
+*/
+
+  var people = [
+
+    {
+      "id": "KeXoYg92is",
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john@smith.com"
+    },
+    {
+      "id": "m7LPbJYSUg",
+      "firstName": "John",
+      "lastName": "Vader",
+      "email": "vader@darkside.com"
+    },
+ 
+    {
+      "id": "NkALmSWtUp",
+      "firstName": "Donald",
+      "lastName": "Duck",
+      "email": "don@disney.com"
+    } 
+];
+
+  function peopleById () {
+      return people.reduce(function(accu, obj){
+          accu[obj.id] = obj;
+          return accu;
+      }, {});
+  }  
+  console.log(peopleById());
+  
+/* Find by First Name
+We want to create a function called peopleByFirstName that will take an array 
+of people and return something that looks like this:
+*/
+var people = [
+
+    {
+      "id": "KeXoYg92is",
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john@smith.com"
+    },
+    {
+      "id": "m7LPbJYSUg",
+      "firstName": "John",
+      "lastName": "Vader",
+      "email": "vader@darkside.com"
+    },
+ 
+    {
+      "id": "NkALmSWtUp",
+      "firstName": "Donald",
+      "lastName": "Duck",
+      "email": "don@disney.com"
+    } 
+];
+
+function peopleByName () {
+      return people.reduce(function(accu, obj){
+          accu[obj.firstName] = obj;
+          return accu;
+      }, {});
+  }  
+  console.log(peopleByName());
+  
+  
+/* High low 2
+  Expanding on a previous exercise, write a function called highLowTwo that 
+  takes an array of numbers, and returns the higest, second highest, lowest, 
+  and second lowest numbers.
+*/
+  
+function highLow2(arr) {
+    var high = arr.reduce(function(accu, element){
+        if(accu > element) {
+            return accu;
+        }
+        else {
+            return element;
+        }
+    });
+    
+    var secondHighest = arr.reduce(function(accu, element){
+        if(element > accu && element < high) {
+            return element;
+        }
+        else {
+            return accu;
+        }
+    })
+    
+    var secondLowest = arr.reduce(function(accu, element){
+        if(element < accu && element > low) {
+            return element;
+        } else {
+            return accu;
+        }
+    })
+    
+    var low =  arr.reduce(function(accu, element){
+        if(accu < element) {
+            return accu;
+        }
+        else {
+            return element;
+        }
+     })
+     
+     return {
+         highest: high,
+         secondHighest: secondHighest,
+         secondLowest: secondLowest, 
+         lowest: low
+     }
+}
+var numbers2 = [ 1, -10, 20, 40, 5, 450, -1999];
+console.log(highLow2(numbers2));
+
+
